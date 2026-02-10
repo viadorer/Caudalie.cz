@@ -238,54 +238,55 @@
         }
 
         .poem-section .content {
-            display: flex;
-            gap: 8vw;
+            display: grid;
+            grid-template-columns: auto 1fr auto 1fr;
+            gap: 0 3vw;
             max-width: 1400px;
             margin-left: 5vw;
+            align-items: start;
         }
 
-        .poem-column {
-            flex: 1;
-        }
-
-        .poem-lang {
+        .poem-label {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
             font-family: var(--font-sans);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--color-gold);
-            margin-bottom: 2rem;
             font-weight: 300;
+            white-space: nowrap;
+            align-self: center;
+        }
+
+        .poem-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+            color: var(--color-gold);
+            margin-bottom: 2rem;
+            font-weight: 400;
         }
 
         .poem-text {
             font-family: var(--font-serif);
-            font-size: clamp(1rem, 1.3vw, 1.15rem);
-            line-height: 2;
+            font-size: clamp(0.85rem, 1.1vw, 1rem);
+            line-height: 1.9;
             font-weight: 400;
             color: var(--color-cream);
             opacity: 0.85;
         }
 
-        .poem-text br {
-            display: block;
-            margin-bottom: 0.3rem;
-            content: "";
-        }
-
-        .poem-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 3vw, 2.5rem);
-            color: var(--color-gold);
-            margin-bottom: 3rem;
-            font-weight: 400;
-        }
-
         @media (max-width: 768px) {
             .poem-section .content {
+                display: flex;
                 flex-direction: column;
-                gap: 4rem;
+                gap: 3rem;
                 margin-left: 5vw;
+            }
+
+            .poem-label {
+                writing-mode: horizontal-tb;
+                transform: none;
             }
         }
 
@@ -432,8 +433,8 @@
             <img src="images/u9534644866_Expansive_view_of_the_historic_French_vineyards_n_c4d8f2a6-bf8a-4cf3-8b17-3221af0dc3e9_2.png" alt="Vinice" class="full-image">
             <div class="overlay"></div>
             <div class="content">
+                <div class="poem-label">Français</div>
                 <div class="poem-column">
-                    <p class="poem-lang">Français</p>
                     <p class="poem-title">Caudalie</p>
                     <p class="poem-text">
                         Le vin ne pose pas de questions.<br>
@@ -469,8 +470,8 @@
                         n'a pas besoin d'être dit.
                     </p>
                 </div>
+                <div class="poem-label">Česky</div>
                 <div class="poem-column">
-                    <p class="poem-lang">Česky</p>
                     <p class="poem-title">Caudalie</p>
                     <p class="poem-text">
                         Víno se neptá.<br>
