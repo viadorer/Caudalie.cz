@@ -237,10 +237,132 @@
             font-weight: 300;
         }
 
+        .poem-section .content {
+            display: flex;
+            gap: 8vw;
+            max-width: 1400px;
+            margin-left: 5vw;
+        }
+
+        .poem-column {
+            flex: 1;
+        }
+
+        .poem-lang {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--color-gold);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .poem-text {
+            font-family: var(--font-serif);
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            line-height: 2;
+            font-weight: 400;
+            color: var(--color-cream);
+            opacity: 0.85;
+        }
+
+        .poem-text br {
+            display: block;
+            margin-bottom: 0.3rem;
+            content: "";
+        }
+
+        .poem-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3vw, 2.5rem);
+            color: var(--color-gold);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .poem-section .content {
+                flex-direction: column;
+                gap: 4rem;
+                margin-left: 5vw;
+            }
+        }
+
+        .email-form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .email-form input[type="email"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem 1.5rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid var(--color-gold);
+            color: var(--color-cream);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 300;
+            outline: none;
+            transition: background 0.3s ease;
+        }
+
+        .email-form input[type="email"]::placeholder {
+            color: rgba(245,245,245,0.4);
+        }
+
+        .email-form input[type="email"]:focus {
+            background: rgba(255,255,255,0.12);
+        }
+
+        .email-form button {
+            padding: 1rem 2.5rem;
+            background: var(--color-gold);
+            color: var(--color-dark);
+            border: none;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .email-form button:hover {
+            background: #d4b67f;
+        }
+
+        .email-note {
+            font-size: 0.8rem;
+            opacity: 0.5;
+            margin-top: 1rem;
+        }
+
+        .email-success {
+            display: none;
+            color: var(--color-gold);
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+
         @media (max-width: 768px) {
             .content {
                 margin-left: 5vw;
                 padding: 0 5vw;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-form input[type="email"] {
+                min-width: unset;
+                width: 100%;
             }
         }
     </style>
@@ -306,15 +428,107 @@
             </div>
         </section>
 
-        <section>
-            <img src="images/u9534644866_Expansive_view_of_the_historic_French_vineyards_n_c4d8f2a6-bf8a-4cf3-8b17-3221af0dc3e9_2.png" alt="Sklenka vína" class="full-image">
+        <section class="poem-section">
+            <img src="images/u9534644866_Expansive_view_of_the_historic_French_vineyards_n_c4d8f2a6-bf8a-4cf3-8b17-3221af0dc3e9_2.png" alt="Vinice" class="full-image">
             <div class="overlay"></div>
             <div class="content">
-                <h2>Umění<br>degustace</h2>
-                <p>Při degustaci vína se soustřeďte na okamžik po polknutí. Počítejte sekundy, po které cítíte doznívající chuť. Každá sekunda je jedna Caudalie - měřítko výjimečnosti vína.</p>
-                <p>Nechte víno vyprávět svůj příběh. Příběh, který trvá dlouho po posledním doušku.</p>
+                <div class="poem-column">
+                    <p class="poem-lang">Français</p>
+                    <p class="poem-title">Caudalie</p>
+                    <p class="poem-text">
+                        Le vin ne pose pas de questions.<br>
+                        Le vin demeure.<br>
+                        Sur les lèvres<br>
+                        comme la lumière sur un rideau,<br>
+                        quand le soir<br>
+                        ne sait pas encore<br>
+                        ce qu'il sera.<br><br>
+                        Une seconde.<br>
+                        Puis une autre.<br>
+                        La saveur ne revient pas —<br>
+                        elle se souvient.<br><br>
+                        Une femme est assise.<br>
+                        Le verre se tait.<br>
+                        Le temps, un instant,<br>
+                        s'appuie<br>
+                        au bord de la table.<br><br>
+                        Certains vins parlent trop fort.<br>
+                        Pas ceux-ci.<br>
+                        Ils restent<br>
+                        comme un parfum sur la nuque,<br>
+                        qui n'appartient qu'à toi.<br><br>
+                        Dans le vin,<br>
+                        il y a un pas en arrière.<br>
+                        Une respiration.<br>
+                        Une phrase inachevée.<br><br>
+                        Et lorsque la saveur s'en va,<br>
+                        elle laisse une trace<br>
+                        qui ne promet rien<br>
+                        et sait tout.<br><br>
+                        Ce qui dure<br>
+                        n'a pas besoin d'être dit.
+                    </p>
+                </div>
+                <div class="poem-column">
+                    <p class="poem-lang">Česky</p>
+                    <p class="poem-title">Caudalie</p>
+                    <p class="poem-text">
+                        Víno se neptá.<br>
+                        Víno zůstává.<br>
+                        Na rtech<br>
+                        jako světlo na závěsu,<br>
+                        když večer ještě neví,<br>
+                        čím bude.<br><br>
+                        Jedna vteřina.<br>
+                        A pak další.<br>
+                        Chuť se nevrací —<br>
+                        ona se rozpomíná.<br><br>
+                        Žena sedí.<br>
+                        Sklenka mlčí.<br>
+                        Čas se na okamžik opře<br>
+                        o okraj stolu.<br><br>
+                        Některá vína mluví hlasitě.<br>
+                        Tahle ne.<br>
+                        Zůstávají<br>
+                        jako parfém na šíji,<br>
+                        který patří jen tobě.<br><br>
+                        Ve víně je krok zpět.<br>
+                        Nádech.<br>
+                        Nedokončená věta.<br><br>
+                        A když chuť odejde,<br>
+                        nechává po sobě stopu,<br>
+                        která nic neslibuje<br>
+                        a všechno ví.<br><br>
+                        To, co trvá,<br>
+                        nemusí být vysloveno.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <img src="images/u9534644866_Full-frame_atmospheric_photograph_of_a_vineyard_b_4e8bacc2-1a64-42da-999d-f17972705234_0.png" alt="Vinice v mlze" class="full-image">
+            <div class="overlay"></div>
+            <div class="content">
+                <h2>Buďte<br>u toho</h2>
+                <p>Připravujeme pro vás vinotéku, kde každé víno má svůj příběh měřený v sekundách dochuti. Nechte nám na sebe kontakt a dáme vám vědět jako prvním.</p>
+                <form class="email-form" id="emailForm">
+                    <input type="email" placeholder="Váš email" required>
+                    <button type="submit">Chci vědět první</button>
+                </form>
+                <p class="email-note">Žádný spam. Jen oznámení o spuštění.</p>
+                <p class="email-success" id="emailSuccess">Děkujeme. Ozveme se.</p>
             </div>
         </section>
     </div>
+
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('emailSuccess').style.display = 'block';
+            document.querySelector('.email-note').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
